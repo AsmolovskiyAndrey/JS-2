@@ -2,24 +2,24 @@
 
 // В синхронном коде следующая инструкция не может начать свое выполнение пока не выполнится предыдущая.
 // То есть инструкции обрабатываются последовательно.
-console.log("First log");
-console.log("Second log");
-console.log("Third log");
+// console.log("First log");
+// console.log("Second log");
+// console.log("Third log");
 
 //* Следующий код - асинхронный.С функцией setTimeout() мы познакомимся дальше.
 // Сейчас о ней нам нужно знать только то, что она принимает два параметра: callback - функцию, которая будет вызвана
 // по истечении времени, которое мы передаем вторым аргументом.
 
-// Will run first
-console.log("First log");
+// // Will run first
+// console.log("First log");
 
-setTimeout(() => {
-  // Will run last, after 2000 milliseconds
-  console.log("Second log");
-}, 2000);
+// setTimeout(() => {
+//   // Will run last, after 2000 milliseconds
+//   console.log("Second log");
+// }, 2000);
 
-// Will run second
-console.log("Third log");
+// // Will run second
+// console.log("Third log");
 
 //! Таймаут
 
@@ -30,6 +30,17 @@ console.log("Third log");
 
 // callback - функция, выполнение которое необходимо запланировать.
 // delay - время в миллисекундах, через которое callback-функция будет вызвана один раз.
+
+//* ClearTimeout(идентификотор setTimeout) - очистит таймаут, т.е. не произойдёт
+
+// const show = () => {
+//   console.log('Вызов отложенной функции');
+// };
+// // function show() {
+// //   console.log('Вызов отложенной функции');
+// // }
+// const time = setTimeout(show, 500);
+// clearTimeout(time); //* не выполнится поскольку есть отмена clearTimeout
 
 //! Интервал
 
