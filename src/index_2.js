@@ -269,3 +269,75 @@ function onMakeOrderSuccess(result) {
 function onMakeOrderError(error) {
   console.log('OrderError', error); // OrderError Извините у нас закончились продукты
 }
+
+
+//? Пример 2 Ипподром ==================================================
+
+const horses = [
+  'Secretariat',
+  'Eclipse',
+  'West Australian',
+  'Flying Fox',
+  'Seabiscuit',
+]
+
+let raceCounter = 0;
+
+const refs = {
+  startBtn: document.querySelector('.js-start-race'),
+  winnerFiels: document.querySelector('.js-winner'),
+  progressFiels: document.querySelector('.js-progress'),
+  tableBody: document.querySelector('.js-results-table'),
+}
+
+refs.startBtn.addEventListener('click', onStart);
+
+function onStart() {
+  raceCounter += 1;
+  const promises = horses.map(run); //! создаст массив из промисов всез лошадей из массива horses
+
+  updateWinnerField(''); 
+  updateProgressField('Заезд начался, ставки не принимаются !');
+  determineWinner(promises);
+  waitForAll(promises);
+}
+
+function determineWinner(horsesP) { // ! Найдёт самый быстрый промис из всех
+  Promise.race(horsesP).then(({ horse, time }) => {
+    updateWinnerField(`Победил ${horse}, финишировав за ${time} времени`);
+    updateResultsTable({ horse, time, raceCounter });
+  })
+}
+
+function waitForAll(horsesP) { //! Доделаем все промисы чтобы можно было сделать новый забег
+  Promise.all(horsesP).then(() => {
+    updateProgressField('Заезд окончен, принимаются ставки.');
+  });
+}
+
+function updateWinnerField(message) { //! очистит поле при новом забеге
+  refs.winnerFiels.textContent = message;
+}
+
+function updateProgressField(message) { //! Запишем о начале заезда 
+  refs.progressFiels.textContent = message;
+}
+
+function updateResultsTable({ horse, time, raceCounter }) { //! вывод сообщения в DOM
+  const tr = `<tr><td>${raceCounter}</td><td>${horse}</td><td>${time}</td></tr>`;
+  refs.tableBody.insertAdjacentHTML('beforeend', tr);
+}
+
+function run(horse) { //! функция вернёт промис одной лошади с её именем и рандомным временем
+  return new Promise(resole => {
+    const time = getRandomTime(2000, 3500);
+
+    setTimeout(() => {
+      resole({ horse, time });
+    }, time);
+  });
+}
+
+function getRandomTime(min, max) { // ! Функция рандомного числа от min до max
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
