@@ -66,43 +66,43 @@
 // а не объект.Создание даты
 
 //* без объявления класса в милисекундах
-const myDate = Date.now();
+// const myDate = Date.now();
 
 //* С объявлением ЭК
-const date = new Date();
+// const date = new Date();
 
-console.log(date);
-// "Fri Jun 18 2021 15:01:35 GMT+0300 (Eastern European Summer Time)"
+// console.log(date);
+// // "Fri Jun 18 2021 15:01:35 GMT+0300 (Eastern European Summer Time)"
 
-console.log(date.toString());
-// "Fri Jun 18 2021 15:01:35 GMT+0300 (Eastern European Summer Time)"
+// console.log(date.toString());
+// // "Fri Jun 18 2021 15:01:35 GMT+0300 (Eastern European Summer Time)"
 
-//? Unix время
+// //? Unix время
 
-// Метод getTime() возвращает числовое представление даты(timestamp) - количество миллисекунд прошедших
-// с полночи 1 января 1970 года.
+// // Метод getTime() возвращает числовое представление даты(timestamp) - количество миллисекунд прошедших
+// // с полночи 1 января 1970 года.
 
-const date1 = new Date();
-console.log(date1.getTime()); // 1666525662942
+// const date1 = new Date();
+// console.log(date1.getTime()); // 1666525662942
 
 //? Установка даты
 
 // При создании экземпляра класса Date, можно установить дату строкой или числами.
 // Строка может описывать только дату или дату и время.
 
-const teamMeetingDate = new Date("March 16, 2030");
-console.log(teamMeetingDate);
-// "Mon Mar 16 2030 00:00:00 GMT+0200 (Eastern European Standard Time)"
+// const teamMeetingDate = new Date("March 16, 2030");
+// console.log(teamMeetingDate);
+// // "Mon Mar 16 2030 00:00:00 GMT+0200 (Eastern European Standard Time)"
 
-const preciseTeamMeetingDate = new Date("March 16, 2030 14:25:00");
-console.log(preciseTeamMeetingDate);
-// "Mon Mar 16 2030 14:25:00 GMT+0200 (Eastern European Standard Time)"
+// const preciseTeamMeetingDate = new Date("March 16, 2030 14:25:00");
+// console.log(preciseTeamMeetingDate);
+// // "Mon Mar 16 2030 14:25:00 GMT+0200 (Eastern European Standard Time)"
 
-// Другой способ создания новых объектов - это передать семь чисел, которые описывают год, месяц(начинается с 0), день, часы,
-// минуты, секунды и миллисекунды.Обязательны только первые три.
-const date3 = new Date(2023, 2, 16, 14, 25, 0, 0);
-console.log(date3);
-// Thu Mar 16 2023 14:25:00 GMT+0100 (Центральная Европа, стандартное время)
+// // Другой способ создания новых объектов - это передать семь чисел, которые описывают год, месяц(начинается с 0), день, часы,
+// // минуты, секунды и миллисекунды.Обязательны только первые три.
+// const date3 = new Date(2023, 2, 16, 14, 25, 0, 0);
+// console.log(date3);
+// // Thu Mar 16 2023 14:25:00 GMT+0100 (Центральная Европа, стандартное время)
 
 //? Методы
 
@@ -110,43 +110,43 @@ console.log(date3);
 // Геттеры используются для чтения всей даты или отдельной составляющей. Возвращаемое значение зависит от текущего часового
 // пояса установленного на вашем компьютере.
 
-const date4 = new Date();
-console.log("Date: ", date4);
+// const date4 = new Date();
+// console.log("Date: ", date4);
 
-// Возвращает день месяца от 1 до 31
-console.log("getDate(): ", date4.getDate());
+// // Возвращает день месяца от 1 до 31
+// console.log("getDate(): ", date4.getDate());
 
-// Возвращает день недели от 0 до 6
-console.log("getDay(): ", date4.getDay());
+// // Возвращает день недели от 0 до 6
+// console.log("getDay(): ", date4.getDay());
 
 // Возвращает месяц от 0 до 11
-console.log("getMonth(): ", date4.getMonth());
+// console.log("getMonth(): ", date4.getMonth());
 
-// Возвращает год из 4 цифр
-console.log("getFullYear(): ", date4.getFullYear());
+// // Возвращает год из 4 цифр
+// console.log("getFullYear(): ", date4.getFullYear());
 
-// Возвращает час
-console.log("getHours(): ", date4.getHours());
+// // Возвращает час
+// console.log("getHours(): ", date4.getHours());
 
-// Возвращает минуты
-console.log("getMinutes(): ", date4.getMinutes());
+// // Возвращает минуты
+// console.log("getMinutes(): ", date4.getMinutes());
 
-// Возвращает секунды
-console.log("getSeconds(): ", date4.getSeconds());
+// // Возвращает секунды
+// console.log("getSeconds(): ", date4.getSeconds());
 
-// Возвращает миллисекунды
-console.log("getMilliseconds(): ", date4.getMilliseconds());
+// // Возвращает миллисекунды
+// console.log("getMilliseconds(): ", date4.getMilliseconds());
 
 //? Сеттеры
 
 // Все, что можно прочитать можно записать, методы для записи называются также как геттеры, но начинаются с приставки set
 
-const date5 = new Date("March 16, 2030 14:25:00");
+// const date5 = new Date("March 16, 2030 14:25:00");
 
-date5.setMinutes(50);
-// "Sat Mar 16 2030 14:50:00 GMT+0200"
+// date5.setMinutes(50);
+// // "Sat Mar 16 2030 14:50:00 GMT+0200"
 
-date5.setFullYear(2040, 4, 8);
+// date5.setFullYear(2040, 4, 8);
 // "Tue May 08 2040 14:50:00 GMT+0300"
 
 //? Форматирование даты
@@ -155,31 +155,31 @@ date5.setFullYear(2040, 4, 8);
 // в стандарте, а зависящее от браузера.Единственное требование к нему - читаемость человеком.
 // Метод toString() возвращает дату целиком, а toDateString() и toTimeString() - только дату и время соответственно.
 
-const date6 = new Date("March 16, 2030 14:25:00");
+// const date6 = new Date("March 16, 2030 14:25:00");
 
-date6.toString();
-// "Sat Mar 16 2030 14:25:00 GMT+0200 (Eastern European Standard Time)"
+// date6.toString();
+// // "Sat Mar 16 2030 14:25:00 GMT+0200 (Eastern European Standard Time)"
 
-date6.toTimeString();
-// "14:25:00 GMT+0200 (Eastern European Standard Time)"
+// date6.toTimeString();
+// // "14:25:00 GMT+0200 (Eastern European Standard Time)"
 
-date6.toLocaleTimeString();
-// "2:25:00 PM"
+// date6.toLocaleTimeString();
+// // "2:25:00 PM"
 
-date6.toUTCString();
-// "Sat, 16 Mar 2030 12:25:00 GMT"
+// date6.toUTCString();
+// // "Sat, 16 Mar 2030 12:25:00 GMT"
 
-date6.toDateString();
-// "Sat Mar 16 2030"
+// date6.toDateString();
+// // "Sat Mar 16 2030"
 
-date6.toISOString();
-// "2030-03-16T12:25:00.000Z"
+// date6.toISOString();
+// // "2030-03-16T12:25:00.000Z"
 
-date6.toLocaleString();
-// "3/16/2030, 2:25:00 PM"
+// date6.toLocaleString();
+// // "3/16/2030, 2:25:00 PM"
 
-date6.getTime();
-// 1899894300000
+// date6.getTime();
+// // 1899894300000
 
 
 //! ===================================  Промисы  =================================================
@@ -200,18 +200,18 @@ date6.getTime();
 // reject(error) - функция для вызвова в случае ошибки. Переданный ей аргумент будет значением отклоненного промиса.
 
 // Change value of isSuccess variable to call resolve or reject
-const isSuccess = true;
+// const isSuccess = true;
 
-const promise = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    if (isSuccess) {
-      resolve("Success! Value passed to resolve function");
-    } else {
-      reject("Error! Error passed to reject function");
-    }
-  }, 2000);
-});
-console.log(promise);
+// const promise = new Promise((resolve, reject) => {
+//   setTimeout(() => { 
+//     if (isSuccess) {
+//       resolve("Success! Value passed to resolve function");
+//     } else {
+//       reject("Error! Error passed to reject function");
+//     }
+//   }, 2000);
+// });
+// console.log(promise);
 
 //? Метод then()
 
@@ -239,3 +239,33 @@ console.log(promise);
 // promise.finally(() => {
 //   // Promise fulfilled or rejected
 // });
+
+//todo ===================== Примеры =================================================
+
+//? Пример 1
+
+const makeOrder = (dish) => {
+  const promise = new Promise((resolve, reject) => {
+    const passed = Math.random() > 0.5;
+
+    setTimeout(() => {
+      if (passed) {
+        resolve('Вот ваше блюдо')
+      }
+      reject('Извините у нас закончились продукты')
+    }, 1000);
+  });
+  return promise;
+};
+
+const order = makeOrder('пирожок');
+
+order.then(onMakeOrderSuccess).catch(onMakeOrderError);
+
+function onMakeOrderSuccess(result) {
+  console.log('OrderSuccess', result); // OrderSuccess Вот ваше блюдо
+}
+
+function onMakeOrderError(error) {
+  console.log('OrderError', error); // OrderError Извините у нас закончились продукты
+}
